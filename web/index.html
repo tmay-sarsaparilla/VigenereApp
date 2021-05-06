@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Vigenere Encryptor</title>
+
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <script type="text/javascript">
+        function process_text(){
+            var message = document.getElementById("message").value;
+            var keywords = document.getElementById("keywords").value;
+            var step_size = document.getElementById("step_size").value;
+            var decrypt = document.getElementById("decrypt").checked;
+
+            var outputPromise = eel.process_text(message, keywords, step_size, decrypt)();
+
+            outputPromise.then(
+                function(value){document.getElementById("output").value = value},
+                function(error){document.getElementById("output").value = "ERROR"}
+            )
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" placeholder="Hello World!"><br><br>
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" name="keywords" placeholder="SECRET"><br><br>
+        <label for="step_size">Step size:</label>
+        <input type="number" id="step_size" name="step_size" min="-5" max="5" step="1" value="0"><br><br>
+        <label for="decrypt">Decrypt?:</label>
+        <input type="checkbox" id="decrypt" name="decrypt"><br><br>
+        <label for="output">Output:</label>
+        <input type="text" id="output" name="output"><br><br>
+        <input type="button" id="btn" class="btn btn-primary" value="Process" onclick="process_text()">
+    </div>
+</body>
+</html>
