@@ -10,5 +10,4 @@ def process_text(input_text, keywords, step_size=0, decrypt=False):
     return vigenere.process_text(input_text=input_text, keywords=keywords, step_size=int(step_size), decrypt=decrypt)
 
 
-eel.start("index.html", size=(300, 300))
-
+eel.start("index.html", size=(300, 350))

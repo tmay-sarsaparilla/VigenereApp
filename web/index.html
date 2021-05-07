@@ -23,18 +23,32 @@
     </script>
 </head>
 <body>
-    <div>
+    <form class="main" autocomplete="off">
         <label for="message">Message:</label>
-        <input type="text" id="message" name="message" placeholder="Hello World!"><br><br>
+        <input type="text" id="message" name="message" class="text-box" placeholder="Write your message here"><br><br>
         <label for="keywords">Keywords:</label>
-        <input type="text" id="keywords" name="keywords" placeholder="SECRET"><br><br>
+        <input type="text" id="keywords" name="keywords" class="text-box" placeholder="Enter keywords here"><br><br>
         <label for="step_size">Step size:</label>
         <input type="number" id="step_size" name="step_size" min="-5" max="5" step="1" value="0"><br><br>
         <label for="decrypt">Decrypt?:</label>
-        <input type="checkbox" id="decrypt" name="decrypt"><br><br>
+        <label class="switch">
+            <input type="checkbox" id="decrypt" name="decrypt">
+            <span class="slider round"></span>
+        </label><br><br>
         <label for="output">Output:</label>
-        <input type="text" id="output" name="output"><br><br>
-        <input type="button" id="btn" class="btn btn-primary" value="Process" onclick="process_text()">
+        <input type="text" id="output" name="output" class="text-box"><br><br>
+        <input type="button" id="btn" value="Process" class="btn" onclick="process_text()">
+    </form>
+    <div class="help-container">
+        <input type="button" value="?" class="help-button">
+        <div class="help-text-container">
+            <p class="help-text">
+                Welcome to Vigenere Encryptor!
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
     </div>
 </body>
 </html>
