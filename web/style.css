@@ -68,6 +68,7 @@ body {
     color: black;
     background-color: #F8F8FF;
     width: 100%;
+    border: none;
 }
 
 .btn {
